@@ -1,0 +1,228 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Sign Up Form by Colorlib</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/style.css">
+      <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="preconnect" href="https://fonts.googleapis.com">
+          <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+          <link href="https://fonts.googleapis.com/css2?family=Teko:wght@700&display=swap" rel="stylesheet">
+         <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+         <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+         <meta name="description" content="{% block metadescription %} {% endblock %}"
+
+</head>
+<style>
+
+a{
+  padding-top: 0px;
+  padding-right: 70px;
+  padding-bottom: 70px;
+  padding-left: 20px;
+}
+body {
+  background-color:lightgrey;
+}
+h2{
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 40px;
+  padding-left: 0px;
+}
+</style>
+<body>
+<div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand" href="#"><h5 style="color:aqua">Graduates store</h5></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="http://127.0.0.1:8000/"><h6 style="color:white">Home</h6> <span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+</div>
+    <div class="main">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-img">
+                </div>
+                <div class="signup-form">
+                    <form method="POST" action="final" class="register-form" id="register-form">
+                         {% csrf_token %}
+                        <h2 style="color:grey">Order and Return page</h2>
+                       <h2><img src="{% static 'images/order.png' %}" alt="bannerimage" width="1110px;" height="250px;"></h2>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">UserName :</label>
+                                <input type="text" name="name" id="name" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="father_name">age :</label>
+                                <input type="text" name="father_name" id="father_name" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address :</label>
+                            <input type="text" name="address" id="address" required/>
+                        </div>
+                        <div class="form-radio">
+                            <label for="gender" class="radio-label">Gender :</label>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="male" checked>
+                                <label for="male">Male</label>
+                                <span class="check"></span>
+                            </div>
+                            <div class="form-radio-item">
+                                <input type="radio" name="gender" id="female">
+                                <label for="female">Female</label>
+                                <span class="check"></span>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="state">State :</label>
+                                <input type="text" name="state" id="state" required/>
+                            </div>
+                            <div class="form-group">
+                                <label for="city">City :</label>
+                                <input type="text" name="state" id="city" required/>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="pincode">Pincode :</label>
+                            <input type="text" name="pincode" id="pincode">
+                        </div>
+                        <div class="form-group">
+                            <label for="course">Purpose :</label>
+                            <div class="form-select">
+                                <select name="course" id="course">
+                                    <option value="computer">return</option>
+                                    <option value="desiger">order</option>
+                                    <option value="marketing">contact enquiry</option>
+                                </select>
+                                <span class="select-icon"><i class="zmdi zmdi-chevron-down"></i></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email ID :</label>
+                            <input type="email" name="email" id="email" />
+                        </div>
+                        <div>
+                         course: <select name="subject" id="subject">
+                         <option value="" selected="selected">Select subject</option>
+                         </select>
+                          <br><br>
+                         specialization: <select name="topic" id="topic">
+                              <option value="" selected="selected">Please select subject first</option>
+                                </select>
+                             <br><br>
+                         select your semester: <select name="chapter" id="chapter">
+                        <option value="" selected="selected">Please select topic first</option>
+                         </select>
+                         <br><br>
+                         </div>
+                        <label for="course">Other materials:</label>
+                        <div class="invisible-checkboxes">
+                            <label class="checkbox-alias" for="r1"> book</label>
+                            <input type="checkbox" name="other" value="2" id="r2"/>
+                            <label class="checkbox-alias" for="r2"> pen</label>
+                             <input type="checkbox" name="other" value="3" id="r3"/>
+                            <label class="checkbox-alias" for="r2"> Question papers</label>
+                             <input type="checkbox" name="other" value="3" id="r3"/>
+                                <label class="checkbox-alias" for="r3"></label>
+                        </div>
+                        <div class="form-submit">
+                            <a><p><input type="submit" value="Reset All" class="btn btn-warning" name="reset" id="reset" ></p><a>
+                           <a class="btn btn-warning" href="{% url 'final' %}">Order now</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+<script>
+var subjectObject = {
+  "Commerce": {
+    "Bcom": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+    "Mcom": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+  },
+  "Biology  science": {
+    "Bsc.science": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+    "Msc.science": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+  },
+    "Computer science": {
+    "Bca": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+    "Mca": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+    "Bsc.Computer science": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+    "Msc.Computer science": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+  },
+    "Malayalam": {
+    "BA.Malayalam": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+    "MA.Malayalam": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+  },
+    "English": {
+    "BA.English": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+    "MA.English": ["sem1 fullnotes", "sem2 fullnotes", "sem3 fullnotes", "sem4 fullnotes"],
+  },
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("subject");
+  var topicSel = document.getElementById("topic");
+  var chapterSel = document.getElementById("chapter");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+
+</script>
+
+    <!-- JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
